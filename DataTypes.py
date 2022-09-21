@@ -351,26 +351,289 @@ print(my_function.__doc__)
 print("Using help:")
 help(my_function)
 
-#Using triple double quotes
-def my_function():
-	"""Demonstrates triple double quotes
-	docstrings and does nothing really."""
 
-	return None
 
-print("Using __doc__:")
-print(my_function.__doc__)
 
-print("Using help:")
-help(my_function)
 
-#One line Docstrings
-def power(a, b):
-	"""Returns arg1 raised to power arg2."""
+# String slicing in python to check if a string can become empty by recursive deletion
+def checkEmpty(input, pattern):
+    # If both are empty
+    if len(input) == 0 and len(pattern) == 0:
+        return 'true'
 
-	return a**b
+    # If only pattern is empty
+    if len(pattern) == 0:
+        return 'true'
 
-print(power.__doc__)
+    while (len(input) != 0):
+
+        # find sub-string in main string
+        index = input.find(pattern)
+
+        # check if sub-string founded or not
+        if (index == (-1)):
+            return 'false'
+
+        # slice input string in two parts and concatenate
+        input = input[0:index] + input[index + len(pattern):]
+    return 'true'
+
+
+# Driver program
+if __name__ == "__main__":
+    input = 'Moonlight'
+    pattern = 'kilmu'
+    print(checkEmpty(input, pattern))
+
+#FInd all duplicate character in string
+from collections import Counter
+def find_dup_char(input):
+    #now create dictionary using counter method which will have string as key and their frequencies as value
+    wc = Counter(input)
+#Finding no of occurrence of ac character and get the index of it
+    for letter,count in wc.items():
+        if(count>1):
+           print(letter)
+#Driver class
+if __name__=="__main__":
+    input ="kilmulovemoonlight"
+    find_dup_char(input)
+
+#using count() method
+def find_dup_char(input):
+    x=[]
+    for i in input:
+        if i not in x and input.count(i)>1:
+            x.append(i)
+    print("".join(x))
+#DRiver program
+if __name__=="__main__":
+    input ='kilmulovemoonlight'
+    find_dup_char(input)
+
+#Reverse string in python (6 different ways)
+#Reverse a string in python using a loop
+def reverse(s):
+    str =""
+    for i in s:
+         str = i + str
+    return str
+s = "Moonlight"
+print("The original string is:",end="")
+print(s)
+print("The reversed string(using loops) is:",end="")
+print(reverse(s))
+
+#Reverse a string in python using recursion
+def reverse(s):
+    if len(s) ==0:
+        return s
+    else:
+        return reverse(s[1:]) +s[0]
+s ="Moonlight"
+print("The original string is:",end="")
+print(s)
+print("The reversed string(using recursion) is :",end="")
+print(reverse(s))
+
+#Reverse sting in python using stack
+#function to create an empty stack.It initializes size of stack as 0
+def createStack():
+    stack =[]
+    return stack
+#Function to determine the size of the stack
+def size(stack):
+    return len(stack)
+#Stack is empty if the size is 0
+def isEmpty(stack):
+    if size(stack) ==0:
+        return true
+#Function to add an item to stack.It increases size by 1
+def push(stack,item):
+    stack.append(item)
+#Function to remove an item from stack It decreases size by 1
+def pop(stack):
+    if isEmpty(stack):
+        return
+    return stack.pop()
+#A stack based function to reverse a string
+def reverse(string):
+    n = len(string)
+    #create a empty stack
+    stack =createStack()
+    #Push all character of string to stack
+    for i in range(0,n,1):
+        push(stack,string[i])
+    #Making the string empty since all characters are saved in stack
+    string=""
+    #pop all characters of string and put them back to string
+    for i in range(0,n,1):
+        string +=pop(stack)
+    return string
+#Driver code
+s ="moonlight"
+print("The original string is:",end="")
+print(s)
+print("The reversed string(using stack) is:",end="")
+print(reverse(s))
+
+#Reverse string in python using an extended slice
+#Function to reverse a string
+def reverse (string):
+    string = string[::-1]
+    return string
+s ="Moonlight"
+print("The original string is:",end="")
+print(s)
+print("The reversed string(using extended slice syntax) is:",end="")
+print(reverse(s))
+
+#Reverse strig in python using reversed() method
+#python code to reverse a string using reversed()
+#Function to reverse a stirng
+def reverse(string):
+    string ="".join(reversed(string))
+    return string
+s="Moonlight"
+print("The original string is:",end="")
+print(s)
+print("The reversed string (using reversed) is:",end="")
+print(reverse(s))
+
+#Reverse string in python using list comprehension
+#Function to reverse a string
+def reverse(string):
+    string=[string[i] for i in range(len(string)-1,-1,-1)]
+    return "".join(string)
+s="Moonlight"
+print("The original string is:",s)
+print("The reversed string(using reversed) is:",reverse(s))
+
+#Reverse string in python usingthe function call
+#function to reverse a string by converting string to list then reversed it and again convert it to string
+def reverse(string):
+    string =list(string)
+    string.reverse()
+    return "".join(string)
+s="Moonlight"
+print("The reversed string(using reversed) is:",end="")
+print(reverse(s))
+
+#python program to check if a string is palindrome or not
+#function which return reverse of a string
+def isPalindrome(s):
+    return s == s[::-1]
+#driver code
+s="malayalam"
+ans =isPalindrome(s)
+if ans:
+    print("yes")
+else:
+    print("NO")
+
+#Iterative method to check string is palindrome or not
+def isPalindrome(str):
+    #Run loop from 0 to len/2
+    for i in range(0,int(len(str)/2)):
+        if str[i] !=str[len(str)-i-1]:
+            return False
+    return True
+#main function
+s="malayalam"
+ans = isPalindrome(s)
+if (ans):
+    print("yes")
+else:
+    print("NO")
+
+#Method using the inbuilt function to reverse a string
+def isPalindrome(s):
+    rev =''.join(reversed(s))
+
+    if(s==rev):
+        return True
+    return False
+#main function
+s="malayalam"
+ans =isPalindrome(s)
+if(ans):
+    print("Yes")
+else:
+    print("no")
+
+#Method using one extra variable
+x="malayalam"
+w=""
+for i in x:
+    w=i+w
+if (x==w):
+    print("Yes")
+else:
+    print("NO")
+
+#Method using flag
+# Python program to check
+# if a string is palindrome
+# or not
+st = 'malayalam'
+j = -1
+flag = 0
+for i in st:
+	if i != st[j]:
+		flag = 1
+		break
+	j = j - 1
+if flag == 1:
+	print("NO")
+else:
+	print("Yes")
+
+#Method using recursion
+# Recursive function to check if a
+# string is palindrome
+def isPalindrome(s):
+
+	# to change it the string is similar case
+	s = s.lower()
+	# length of s
+	l = len(s)
+
+	# if length is less than 2
+	if l < 2:
+		return True
+
+	# If s[0] and s[l-1] are equal
+	elif s[0] == s[l - 1]:
+
+		# Call is palindrome form substring(1,l-1)
+		return isPalindrome(s[1: l - 1])
+
+	else:
+		return False
+
+# Driver Code
+s = "MalaYaLam"
+ans = isPalindrome(s)
+
+if ans:
+	print("Yes")
+
+else:
+	print("No")
+#using extend and reverse methods
+def palindrome(s):
+	x=list(s)
+	y=[]
+	y.extend(x)
+	x.reverse()
+	if(x==y):
+		return True
+	return False
+#Driver code
+s="malayalam"
+ans =isPalindrome(s)
+if ans:
+	print("Yes")
+else:
+	print("NO")
 """
-#Multi line docstring
-
