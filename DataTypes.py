@@ -636,4 +636,56 @@ if ans:
 	print("Yes")
 else:
 	print("NO")
+
+#Interesting facts about strings in python set 1
+#strings are immutable
+#python3 program to show that string cannot be changed
+a='moonlight'
+#output is displayed
+print(a)
+a[2]='K'
+print(a)
+#cauese error
+
+#python3 program to show that a string can be appended to a string
+a="moonlight"
+print(a)
+a= a + ' my love'
+print(a)
+
+#Python3 program to show that both string hold same identity
+string1 ="Hello"
+string2 ="Hello"
+print(id(string1))
+print(id(string2))
+
+#Modifying a string
+string1 ="hello"
+print(id(string1))
+string1 +=" World"
+print(string1)
+print(id(string1))
+
+#python3 program to create strings in three different ways and concatenate them
+a='moon'
+b="light"
+c='''My'''
+d='''love,"but"'''
+print(a)
+print(b)
+print(c)
+print(d)
+print(a+b+c+d)
+
+#How to print single quote or double quote in screen?
+print("Hi I am kilmu")
+#use of escape sequence
+print("she said,\"she cann't love me\"")
+print('I will love her forever')
+#use of mix quotes
+print('one day,"she will love me too"')
+
+#print Escape character
+print("\\ is back slash")
 """
+#Intersting facts about strings in python set 2(slicing)
