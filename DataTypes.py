@@ -687,5 +687,75 @@ print('one day,"she will love me too"')
 
 #print Escape character
 print("\\ is back slash")
-"""
+
 #Intersting facts about strings in python set 2(slicing)
+#A python to illustrate slicing in string
+x = "Moonlight my Love"
+#prints 3rd character beginning from 0
+print(x[2])
+#print 7th character
+print(x[6])
+#prints 3rd character from the rear beginning from -1
+print(x[-3])
+#Length of string is 14 so it is out of bound
+print(x[15])
+
+
+#Slicing string_name[beginning:end:step]
+#A python program to illustrate print substrings of string
+x ="I love you Moonnlight"
+#prints substring from 2nd to 5th character
+print(x[2:5])
+#prints substring stepping up 2nd character from 4th to 10th character
+print(x[4:10:2])
+#print 3rd character from rear from 3 to 5
+print(x[-5:-3])
+
+
+#Python string Methods set 1 (find,rfind,startwith,endwith,islower,isupper,lower,upper,swapcase,title)
+#python code to demonstrate working of find() and rfind()
+str ="Moonlight the love of my life"
+str2="kilmu"
+#using find() to find first occurence of st2 returns 8
+print("The first occurrence of str2 is at :",end="")
+print(str.find(str2,4))
+#using rfind () to find last occurrence of str2
+#returns2
+print("The last occurrence of str2 is at :",end="")
+print(str.rfind(str2,4))
+
+#python code to demonstrate working of startswith() and endswith()
+str ="kilmu"
+str1 ="Monlight the love of my life"
+#using startswith() to find if str starts with st1
+if str1.startswith(str):
+    print("str1 begins with:"+str)
+else: print("str1 does not begin with :"+ str)
+#using endswith () to find if str ends with str1
+if str1.endswith(str):
+    print("str1 ends with:"+str)
+else:print("str1 does not ends with:"+str)
+
+#python code to demonstrate working of isupper() and islower()
+str ="Moonlight the love of my life"
+str1 ="KILMU"
+#checking if all character in str1 are upper cased
+if str1.isupper():
+    print("All character in str1 is upper cased")
+else:print("All character in str1 are not upper cased")
+
+#checking if all charcters in str are lower case
+if str.islower():
+    print("All character in str is lower cased")
+else:print("All charcter in str are not lower cased")
+"""
+#python code to demonstrate working of upper(),lower(),swapcase() and title()
+str ="Moonlight the Love of my Life"
+str1=str.lower();
+print("The lower case converted string:"+str1)
+str2=str.upper();
+print("The upper case converted string:"+str2)
+str3=str.swapcase();
+print("The swaps case converted string:"+str3)
+str4=str.title();
+print("The lower case converted string:"+str4)
