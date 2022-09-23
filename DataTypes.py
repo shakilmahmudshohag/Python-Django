@@ -813,4 +813,164 @@ str1 =("Moonlight","my","love")
 #using join() to join sequence str1 with str
 print("The string after joining is:",end="")
 print(str.join(str1))
+
+#python string method set 3(strip,istrip,rstrip,min,max,maketrans,translate,replace,& expandtabs())
+#python code to demonstrate working of strip(),lstrip() and rstrip()
+str="----Moonlight----"
+#using strip() to delete all '-'
+print("String after stripping all '-' is:",end="")
+print(str.strip('-'))
+#using lstrip() to delete all trailing '-'
+print("String after stripping all leading '-' is:",end="")
+print(str.lstrip('-'))
+#using rstrip() to delete all leading '-'
+print("String after stripping all leading '-' is:",end="")
+print(str.rstrip('-'))
+
+#python code to demonstrate working of min() and max()
+str ="Moonlight"
+print("The minimum value character is:" + min(str))
+print("The maximum value character is:" + max(str))
+
+# Python code to demonstrate working of
+# maketrans() and translate()
+from string import maketrans # for maketrans()
+
+str = "moonlight"
+
+str1 = "moo"
+str2 = "kil"
+
+# using maketrans() to map elements of str2 with str1
+mapped = maketrans( str1, str2 )
+
+# using translate() to translate using the mapping
+print ="The string after translation using mapped elements is : "
+print =str.translate(mapped)
+
+#python code to demonstrate working of replace()
+str ="Moon_light the love of my life"
+str1 ="Moon_"
+str2 ="kilmu"
+#using replace () to replace str2 with str1 in str only changes 2 occurrences
+print("The string after replacing strings is:",end="")
+print(str.replace(str1,str2,2))
+
+#python code to illustrate expandtabs()
+string ='Moon\tthe_love\tof_my_life'
+
+#No parameters,by default size is 8
+print(string.expandtabs())
+#tab size taken as 2
+print(string.expandtabs(2))
+#tab size taken as 5
+print(string.expandtabs(5))
+
+# Regular Expressions in Python – Set 2 (Search, Match and Find All)
+# A Python program to demonstrate working of re.match().
+import re
+
+# Lets use a regular expression to match a date string
+# in the form of Month name followed by day number
+regex = r"([a-zA-Z]+) (\d+)"
+
+match = re.search(regex, "I was born on June 24")
+
+if match != None:
+
+	# We reach here when the expression "([a-zA-Z]+) (\d+)"
+	# matches the date string.
+
+	# This will print [14, 21), since it matches at index 14
+	# and ends at 21.
+	print ("Match at index %s, %s" % (match.start(), match.end()))
+
+	# We us group() method to get all the matches and
+	# captured groups. The groups contain the matched values.
+	# In particular:
+	# match.group(0) always returns the fully matched string
+	# match.group(1) match.group(2), ... return the capture
+	# groups in order from left to right in the input string
+	# match.group() is equivalent to match.group(0)
+
+	# So this will print "June 24"
+	print ("Full match: %s" % (match.group(0)))
+
+	# So this will print "June"
+	print ("Month: %s" % (match.group(1)))
+
+	# So this will print "24"
+	print ("Day: %s" % (match.group(2)))
+
+else:
+	print ("The regex pattern does not match.")
+
+
+# A Python program to demonstrate working
+# of re.match().
+import re
+
+
+# a sample function that uses regular expressions
+# to find month and day of a date.
+def findMonthAndDate(string):
+    regex = r"([a-zA-Z]+) (\d+)"
+    match = re.match(regex, string)
+
+    if match == None:
+        print("Not a valid date")
+        return
+
+    print("Given Data: %s" % (match.group()))
+    print("Month: %s" % (match.group(1)))
+    print("Day: %s" % (match.group(2)))
+
+
+# Driver Code
+findMonthAndDate("Jun 24")
+print("")
+findMonthAndDate("I was born on June 24")
+
+# A Python program to demonstrate working
+# of re.match().
+import re
+
+
+# a sample function that uses regular expressions
+# to find month and day of a date.
+def findMonthAndDate(string):
+    regex = r"([a-zA-Z]+) (\d+)"
+    match = re.match(regex, string)
+
+    if match == None:
+        print("Not a valid date")
+        return
+
+    print("Given Data: %s" % (match.group()))
+    print("Month: %s" % (match.group(1)))
+    print("Day: %s" % (match.group(2)))
+
+
+# Driver Code
+findMonthAndDate("Jun 24")
+print("")
+findMonthAndDate("I was born on June 24")
+
+
+# A Python program to demonstrate working of
+# findall()
+import re
+
+# A sample text string where regular expression
+# is searched.
+ string = Hello my Number is 123456789 and  #(before run use string=""".....""")
+			my friend's number is 987654321
+
+# A sample regular expression to find digits.
+regex = '\d+'
+
+match = re.findall(regex, string)
+print(match)
+
 """
+#Python string title method
