@@ -748,7 +748,7 @@ else:print("All character in str1 are not upper cased")
 if str.islower():
     print("All character in str is lower cased")
 else:print("All charcter in str are not lower cased")
-"""
+
 #python code to demonstrate working of upper(),lower(),swapcase() and title()
 str ="Moonlight the Love of my Life"
 str1=str.lower();
@@ -759,3 +759,58 @@ str3=str.swapcase();
 print("The swaps case converted string:"+str3)
 str4=str.title();
 print("The lower case converted string:"+str4)
+
+
+#python string Methods set 2(len,count,center,ljust,rjust,isalpha,isalnum,isspace and join)
+#python code to demonstrate working of len() and count()
+str ="Moonlight the love of my life"
+#printing length of string using len()
+print("The length of string is:",len(str))
+#printing occurrence of "Moonlight" in string prints 2 as it only checks till 15th element
+print("Number of apperance of ""Moonlight"" is:",end="")
+print(str.count("Moonlight",0,29))
+
+
+# Python code to demonstrate working of
+# center(), ljust() and rjust()
+str = "Moonlight"
+
+# Printing the string after centering with '-'
+print ("The string after centering with '-' is : ",end="")
+print ( str.center(20,'-'))
+
+# Printing the string after ljust()
+print ("The string after ljust is : ",end="")
+print ( str.ljust(20,'-'))
+
+# Printing the string after rjust()
+print ("The string after rjust is : ",end="")
+print ( str.rjust(20,'-'))
+
+# Python code to demonstrate working of
+# isalpha(), isalnum(), isspace()
+str = "Moonlight"
+str1 = "123"
+
+# Checking if str has all alphabets
+if (str.isalpha()):
+	print ("All characters are alphabets in str")
+else : print ("All characters are not alphabets in str")
+
+# Checking if str1 has all numbers
+if (str1.isalnum()):
+	print ("All characters are numbers in str1")
+else : print ("All characters are not numbers in str1")
+
+# Checking if str1 has all spaces
+if (str1.isspace()):
+	print ("All characters are spaces in str1")
+else : print ("All characters are not spaces in str1")
+
+#python code to demonstrate working of join()
+str="_"
+str1 =("Moonlight","my","love")
+#using join() to join sequence str1 with str
+print("The string after joining is:",end="")
+print(str.join(str1))
+"""
