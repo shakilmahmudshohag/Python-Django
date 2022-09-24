@@ -957,20 +957,44 @@ print("")
 findMonthAndDate("I was born on June 24")
 
 
-# A Python program to demonstrate working of
-# findall()
+
+#Python string title method
+#python string title() Method Example
+print("moonlight_the_love_of_my_Life".title())
+
+#Basic usages of python string title() method
+#conversion from mixed case
+str1 ="moonLight"
+print(str1,'converted to using title():',str1.title())
+
+#conversion from all lower case
+str4 ="moonlight".title()
+print(str4,'converted to using title():',str4.title())
+#conversion from all upper case
+str5 ="MOONLIGHT".title()
+print(str5,'converted to using title():',str5.title())
+
+#title() method considers any non-alphabet as a word boundary
+string = "He's smarter."
+expected_string ="He's Smarter"
+print("Expected:",expected_string,",Actual:",string.title())
+
+#Different word boundaries other than space,when using title() Method
+string ="moonlight-mylove"
+print(string,"converted using title():",string.title())
+
+#using Regex to fix the unexpected behavior of python string title() Method
 import re
 
-# A sample text string where regular expression
-# is searched.
- string = Hello my Number is 123456789 and  #(before run use string=""".....""")
-			my friend's number is 987654321
 
-# A sample regular expression to find digits.
-regex = '\d+'
+def to_title(string):
+	regex = re.compile("[a-z]+('[a-z]+)?", re.I)
+	return regex.sub(lambda grp: grp.group(0)[0].upper() + grp.group(0)[1:].lower(),
+					string)
 
-match = re.findall(regex, string)
-print(match)
 
+print(to_title("I will love you forever Meri moonlight"))
 """
-#Python string title method
+
+
+#Python | Swap commas and dots in a String
