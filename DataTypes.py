@@ -1021,3 +1021,77 @@ def Replace(str1):
 string = "14, 625, 498.002"
 print(Replace(string))
 """
+
+#python program to convert string to a list
+#Using split() method
+#Python code to convert string to list
+def Convert(string):
+    li = list(string.split(" "))
+    return li
+#DRiver code
+str1 ="Moonlight the love of my life"
+print(Convert(str1))
+
+#using string slicing
+#Python code to convert string to list character -wise
+def Convert(string):
+    list1=[]
+    list1[:0]=string
+    return list1
+#Driver code
+str1="MLKM"
+print(Convert(str1))
+
+#Using re.findall() method
+#python code to convert string to list character wise
+import re
+def Convert(string):
+    return re.findall('[a-zA-Z]',string)
+str1="ABCD"
+print(Convert(str1))
+
+#Using list comprehension
+s="moonlight"
+x=[i for i in s]
+print(x)
+
+#Using enumerate function
+s="moonlight"
+x=[i for a,i in enumerate(s) ]
+print(x)
+
+#Using json
+
+import json
+
+stringA = '["moonlight", 2,"my", 4, "love",3]'
+
+# Type check
+
+res = json.loads(stringA)
+# Result
+print("The converted list : \n",res)
+
+#using ast.literal
+import ast
+
+# initializing string representation of a list
+ini_list = '["moonlight", 2,"my", 4, "love",3]'
+
+
+# Converting string to list
+res = ast.literal_eval(ini_list)
+
+# printing final result and its type
+print(res)
+print(type(res))
+
+# Using lambda function
+s="moonlight"
+x=list(filter(lambda i:(i in s),s))
+print(x)
+
+#Using map()
+s ="moonlight"
+x=list(map(str,s))
+print(x)
