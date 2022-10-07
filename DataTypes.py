@@ -1020,7 +1020,7 @@ def Replace(str1):
 
 string = "14, 625, 498.002"
 print(Replace(string))
-"""
+
 
 #python program to convert string to a list
 #Using split() method
@@ -1095,3 +1095,56 @@ print(x)
 s ="moonlight"
 x=list(map(str,s))
 print(x)
+
+
+#Count and display vowels in a string
+#Counting vowels :String way
+def Check_Vow(string,vowels):
+    final = [each for each in string if each in vowels]
+    print(len(final))
+    print(final)
+
+#Driver code
+string ="The Moonlight love of my life "
+vowels ="AaEeIiOoUu"
+Check_Vow(string,vowels);
+
+#Counting vowels :Dictionary way
+#Using dictionary
+def Check_Vow(string,vowels):
+
+    #casefold has been used to ignore cases
+    string =string.casefold()
+
+    #From a dictionary with a key as a vowel and the value as 0
+    count = {}.fromkeys(vowels, 0)
+
+    #To count the vowels
+    for character in string:
+        if character in count:
+            count[character] +=1
+    return count
+#Driver code
+string ="The Moonlight love of my life "
+vowels ="AaEeIiOoUu"
+print(Check_Vow(string,vowels));
+"""
+
+#Counting vowels:regex way
+import re
+#count vowels in different way
+#using re.findall
+def Check_Vow(string,vowels):
+    #using re.findall in string
+    str_list =re.findall(f'[{vowels}]',string,re.I)
+
+    #printing length of string
+    print(len(str_list))
+
+    #Returning the list of matched element
+    return str_list
+
+#Driver code
+string ="The Moonlight love of my life "
+vowels ="AaEeIiOoUu"
+print(Check_Vow(string,vowels));
